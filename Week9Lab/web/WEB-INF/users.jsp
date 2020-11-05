@@ -34,7 +34,7 @@
                         <br/>
                         <select name="role">
                             <c:forEach items="${role}" var="read">    
-                                <option value="${read.roleID}">${read.roleName}</option>
+                                <option value="${roleID}">${read.roleName}</option>
                             </c:forEach>
                         </select><br/>
                         <input type="hidden" name="action" value="add">

@@ -36,12 +36,24 @@ public class UserService {
     public void update(User thisUser) throws Exception {
         User user = thisUser;
         UserDB userDB = new UserDB();
+        user.setActive(user.getActive());
+        user.setEmail(user.getEmail());
+        user.setFirstName(user.getFirstName());
+        user.setLastName(user.getLastName());
+        user.setPassword(user.getPassword());
+        user.setRole(user.getRole());
         userDB.update(user);
     }
     
-    public void delete(String email) throws Exception {
+    public void delete(User thisUser) throws Exception {
+        
         UserDB userDB = new UserDB();
-        userDB.delete(email);
+        User user = userDB.get(thisUser);
+        userDB.delete(user);
+    }
+
+    public void delete(String userEmail) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
    
     
